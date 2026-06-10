@@ -1,5 +1,7 @@
 package com.drlabs.bookingservice.controller;
 
+import com.drlabs.bookingservice.request.BookingRequest;
+import com.drlabs.bookingservice.response.BookingResponse;
 import com.drlabs.bookingservice.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,7 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @PostMapping("/bookings")
+    @PostMapping(consumes = "application/json", produces = "application/json", path = "/booking")
     public BookingResponse createBooking(@RequestBody BookingRequest request) {
         return bookingService.createBooking(request);
     }
