@@ -1,4 +1,5 @@
-package com.drlabs.bookingservice.response;
+package com.drlabs.bookingservice.event;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +12,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class BookingResponse {
+public class BookingEvent {
+    //include all the data needed for a booking
     private Long userId;
     private Long eventId;
     private Long ticketCount;
